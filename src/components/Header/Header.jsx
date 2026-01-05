@@ -1,12 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Menu, Search, User } from 'react-feather';
-
-import { QUERIES } from '../../constants';
-
-import MaxWidthWrapper from '../MaxWidthWrapper';
-import Logo from '../Logo';
-import Button from '../Button';
+import React from "react";
+import styled from "styled-components";
+import { Menu, Search, User } from "react-feather";
+import { QUERIES } from "../../constants";
+import MaxWidthWrapper from "../MaxWidthWrapper";
+import Logo from "../Logo";
+import Button from "../Button";
 
 const Header = () => {
   return (
@@ -29,7 +27,21 @@ const Header = () => {
         </Row>
       </SuperHeader>
       <MainHeader>
-        <Logo />
+        <ActionGroup>
+          <button>
+            <Search size={24} />
+          </button>
+          <button>
+            <Menu size={24} />
+          </button>
+        </ActionGroup>
+        <ActionGroup>
+          <Logo />
+        </ActionGroup>
+        <Subscribe>
+          <Button>Subscribe</Button>
+          <a>Already a subscriber</a>
+        </Subscribe>
       </MainHeader>
     </header>
   );
@@ -39,11 +51,20 @@ const SuperHeader = styled.div`
   padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
+  @media ${QUERIES.tabletAndUp} {
+    display: none;
+  }
+`;
+
+const Subscribe = styled.div`
+  align-self: flex-end;
+  text-align: center;
 `;
 
 const Row = styled(MaxWidthWrapper)`
   display: flex;
   justify-content: space-between;
+  white-space: nowrap;
 `;
 
 const ActionGroup = styled.div`
@@ -60,11 +81,15 @@ const ActionGroup = styled.div`
 `;
 
 const MainHeader = styled(MaxWidthWrapper)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 32px;
-  margin-bottom: 48px;
+  display: none;
+
+  @media ${QUERIES.tabletAndUp} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+    margin-bottom: 48px;
+  }
 `;
 
 export default Header;

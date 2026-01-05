@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
+import { QUERIES } from "../../constants";
 
 const MiniStory = ({ id, image, title }) => {
   return (
@@ -16,6 +17,9 @@ const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   gap: 8px;
+  @media ${QUERIES.tabletAndUp} {
+    min-width: 200px;
+  }
 `;
 
 const Image = styled.img`
