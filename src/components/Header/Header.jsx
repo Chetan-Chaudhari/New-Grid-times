@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Menu, Search, User } from "react-feather";
-import { QUERIES } from "../../constants";
+import { COLORS, QUERIES } from "../../constants";
 import MaxWidthWrapper from "../MaxWidthWrapper";
 import Logo from "../Logo";
 import Button from "../Button";
@@ -40,7 +40,7 @@ const Header = () => {
         </ActionGroup>
         <Subscribe>
           <Button>Subscribe</Button>
-          <a>Already a subscriber</a>
+          <Link href="#">Already a subscriber</Link>
         </Subscribe>
       </MainHeader>
     </header>
@@ -55,7 +55,11 @@ const SuperHeader = styled.div`
     display: none;
   }
 `;
-
+const Link = styled.a`
+  text-decoration: underline;
+  font-style: italic;
+  color: ${COLORS.gray[700]};
+`;
 const Subscribe = styled.div`
   align-self: flex-end;
   text-align: center;
