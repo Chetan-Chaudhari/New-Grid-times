@@ -18,11 +18,19 @@ const OpinionStory = ({ id, title, author, avatar }) => {
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     display: flex;
     flex-direction: row-reverse;
     padding: 16px 0px;
     border-bottom: 1px solid ${COLORS.gray[300]};
+  }
+  @media ${QUERIES.tabletOnly} {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0px;
+    word-wrap: break-word;
+    flex: 1;
+    padding: 16px 0px;
   }
 `;
 

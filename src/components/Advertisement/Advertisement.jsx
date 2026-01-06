@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { QUERIES } from '../../constants';
+import React from "react";
+import styled from "styled-components";
+import { QUERIES } from "../../constants";
 
 const Advertisement = (props) => {
   return (
@@ -30,7 +30,7 @@ const Prefix = styled.p`
 
   &::before,
   &::after {
-    content: '—';
+    content: "—";
     margin: 0 8px;
   }
 `;
@@ -40,8 +40,11 @@ const Box = styled.div`
   height: 382px;
   background: var(--color-gray-300);
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     height: 120px;
+  }
+  @media ${QUERIES.tabletOnly} {
+    height: 152px;
   }
 `;
 

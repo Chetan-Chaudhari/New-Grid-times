@@ -23,9 +23,15 @@ const Wrapper = styled.article`
   gap: 4px 16px;
   grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     margin-left: 8px;
     margin-right: 8px;
+    padding: 16px 0px;
+    border-bottom: 1px solid ${COLORS.gray[300]};
+  }
+  @media ${QUERIES.tabletOnly} {
+    grid-template-areas: "image" "heading" "abstract";
+    grid-template-columns: 1fr;
     padding: 16px 0px;
     border-bottom: 1px solid ${COLORS.gray[300]};
   }

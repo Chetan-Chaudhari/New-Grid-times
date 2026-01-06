@@ -27,7 +27,7 @@ const Header = () => {
         </Row>
       </SuperHeader>
       <MainHeader>
-        <ActionGroup>
+        <ActionGroup className="main-actions">
           <button>
             <Search size={24} />
           </button>
@@ -51,7 +51,7 @@ const SuperHeader = styled.div`
   padding: 16px 0;
   background: var(--color-gray-900);
   color: white;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     display: none;
   }
 `;
@@ -63,6 +63,9 @@ const Link = styled.a`
 const Subscribe = styled.div`
   align-self: flex-end;
   text-align: center;
+  @media ${QUERIES.tabletOnly} {
+    display: none;
+  }
 `;
 
 const Row = styled(MaxWidthWrapper)`
@@ -74,7 +77,6 @@ const Row = styled(MaxWidthWrapper)`
 const ActionGroup = styled.div`
   display: flex;
   gap: 24px;
-
   /*
     FIX: Remove the inline spacing that comes with
     react-feather icons.
@@ -85,12 +87,19 @@ const ActionGroup = styled.div`
 `;
 
 const MainHeader = styled(MaxWidthWrapper)`
-  display: none;
-
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 32px;
+    margin-bottom: 48px;
+  }
+  @media ${QUERIES.tabletOnly} {
+    .main-actions {
+      display: none;
+    }
+    display: flex;
+    justify-content: center;
     margin-top: 32px;
     margin-bottom: 48px;
   }

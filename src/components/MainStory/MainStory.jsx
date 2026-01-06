@@ -38,10 +38,16 @@ const Abstract = styled.p`
   font-size: 1rem;
   margin-bottom: 1em;
   white-space: pre-wrap;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 9;
+    overflow: hidden;
+  }
+  @media ${QUERIES.tabletOnly} {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 12;
     overflow: hidden;
   }
 `;

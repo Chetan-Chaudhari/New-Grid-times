@@ -142,7 +142,7 @@ const TopRow = styled.div`
   border-bottom: 1px solid var(--color-gray-700);
   padding: 24px 0;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     flex-direction: row;
     justify-content: flex-end;
   }
@@ -173,7 +173,7 @@ const MainNavArea = styled.div`
   padding: 32px 0 48px;
   text-align: center;
 
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp}, ${QUERIES.tabletOnly} {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     text-align: left;
@@ -204,7 +204,7 @@ const Subfooter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     align-items: flex-start;
   }
 `;

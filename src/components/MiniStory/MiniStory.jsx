@@ -17,8 +17,11 @@ const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  @media ${QUERIES.tabletAndUp} {
+  @media ${QUERIES.laptopAndUp} {
     min-width: 200px;
+  }
+  @media ${QUERIES.tabletOnly} {
+    min-width: 150px;
   }
 `;
 
